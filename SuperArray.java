@@ -87,14 +87,12 @@ public class SuperArray {
 	}
 
 	public String remove(int index){
-		String value = "";
-		for(int i = 0; i < size; i++){
-			if(i == index)
-				data[i] = value;
-			if(i > index)
-				data[i] = data[i + 1];
+		String value = data[index];
+		for(int i = index; i < size - 1; i++){
+			data[i] = data[i + 1];
 		}
 		size -= 1;
+		data[size] = null;
 		return value;
 	}
 
