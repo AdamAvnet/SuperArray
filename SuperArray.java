@@ -90,7 +90,7 @@ public class SuperArray {
 		String value = "";
 		for(int i = 0; i < size; i++){
 			if(i == index)
-				value = data[i];
+				data[i] = value;
 			if(i >= index)
 				data[i] = data[i + 1];
 		}
