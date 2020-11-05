@@ -77,8 +77,8 @@ public class SuperArray {
 	public void add(int index, String element){
 		if(size == data.length)
 			resize();
-		for(int i = size; i >= 0; i--){
-			if(i > index)
+		for(int i = size - 1; i >= 0; i--){
+			if(i >= index)
 				data[i + 1] = data[i];
 			if(i == index)
 				data[i] = element;
@@ -110,6 +110,25 @@ public class SuperArray {
 			arr[i] = data[i];
 		}
 		return arr;
+	}
+
+	public int lastIndexOf(String value){
+		for(int i = size - 1; i >= 0; i--){
+			if(data[i].equals(value))
+				return i;
+		}
+		return -1;
+	}
+
+	public boolean equals(SuperArray other){
+		if(this.size != other.size)
+			return false;
+		else
+			for(int i = 0; i < this.size; i++){
+				if(!(this.data[i].equals(other.data[i])))
+					return false;
+			}
+		return true;
 	}
 }
 
