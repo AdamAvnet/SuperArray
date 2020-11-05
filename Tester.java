@@ -29,11 +29,26 @@ public class Tester {
 		System.out.println("Cleared SuperArray 2: " + test1);
 		System.out.println("SuperArray 1: " + test);
 		test.remove(2);
-		System.out.println("Super Array 1 (with 2nd index removed): " + test);
+		System.out.println("SuperArray 1 (with 2nd index removed): " + test);
+		test.remove(test.size());
+		System.out.println("SuperArray 1 (with last index removed): " + test);
 		System.out.println("Index of Eta (should return 5): " + test.indexOf("Eta"));
 		System.out.println("Index of Computer (should return -1): " + test.indexOf("Computer"));
 		String[] arr = test.toArray();
 		arr[0] = "Regular Array";
 		System.out.println("toArray test (should return \"Regular Array\"): " + arr[0]);
+		test.add(4, "Alpha");
+		test.add(8, "Beta");
+		System.out.println("SuperArray 1 (with added Alpha and Beta): " + test);
+		System.out.println("Last index of Alpha (should be 4): " + test.lastIndexOf("Alpha"));
+		System.out.println("Last index of Beta (should be 8): " + test.lastIndexOf("Beta"));
+		for(int i = 0; i < test.size() - 1; i++){
+			test1.add(test.get(i));
+		}
+		System.out.println("SuperArray2: " + test1);
+		System.out.println("Are the two arrays the same? (should be false) " + test.equals(test1));
+		test1.add(test.get(test.size() - 1));
+		System.out.println("Are the two arrays the same now? (should be true) " + test.equals(test1));
+
 	}
 }
