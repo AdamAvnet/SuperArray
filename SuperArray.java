@@ -91,7 +91,7 @@ public class SuperArray {
 		for(int i = 0; i < size; i++){
 			if(i == index)
 				data[i] = value;
-			if(i >= index)
+			if(i > index)
 				data[i] = data[i + 1];
 		}
 		size -= 1;
