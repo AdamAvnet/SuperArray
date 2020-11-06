@@ -105,7 +105,7 @@ public class SuperArray {
 	}
 
 	public String[] toArray(){
-		String[] arr = new String[data.length];
+		String[] arr = new String[size];
 		for(int i = 0; i < size; i++){
 			arr[i] = data[i];
 		}
