@@ -30,7 +30,7 @@ public class Tester {
 		System.out.println("SuperArray 1: " + test);
 		test.remove(2);
 		System.out.println("SuperArray 1 (with 2nd index removed): " + test);
-		test.remove(test.size());
+		test.remove(test.size() - 1);
 		System.out.println("SuperArray 1 (with last index removed): " + test);
 		System.out.println("Index of Eta (should return 5): " + test.indexOf("Eta"));
 		System.out.println("Index of Computer (should return -1): " + test.indexOf("Computer"));
@@ -49,6 +49,43 @@ public class Tester {
 		System.out.println("Are the two arrays the same? (should be false) " + test.equals(test1));
 		test1.add(test.get(test.size() - 1));
 		System.out.println("Are the two arrays the same now? (should be true) " + test.equals(test1));
+		
+		try{
+			new SuperArray(-5);
+		}
+		catch(Exception e){
+			System.out.println("Index for SuperArray is out of bounds");
+		}
+
+		try{
+			test.get(test.size());
+		}
+		catch(Exception e){
+			System.out.println("Index for get is out of bounds");
+		}
+	
+		try{
+			test.set(test.size(), "Hello");
+		}
+		catch(Exception e){
+			System.out.println("Index for set is out of bounds");
+		}
+		
+		try{
+			test.add(-4, "Computer");
+		}
+		catch(Exception e){
+			System.out.println("Index for add is out of bounds");
+		}
+
+		try{
+			test.remove(102);
+		}
+		catch(Exception e){
+			System.out.println("Index for remove is out of bounds");
+		}
+
+		System.out.println(test);
 
 	}
 }
