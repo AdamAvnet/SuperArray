@@ -85,11 +85,17 @@ public class SuperArray {
 			resize();
 		if(index < 0 || index > size)
 			throw new IndexOutOfBoundsException("The index must be non-negative and less than the size of the SuperArray");
+		if(size == 0)
+			data[0] = element;
+		if(size == index)
+			data[size] = element;
+		else{
 		for(int i = size - 1; i >= 0; i--){
 			if(i >= index)
 				data[i + 1] = data[i];
 			if(i == index)
 				data[i] = element;
+		}
 		}
 		size += 1;
 	}
